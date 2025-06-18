@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  align-items: center;
+}
+
+.indicator {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+  background-color: #E8B86D;
+  text-align: center;
+  border: 1px #666 solid #E8B86D;
+  margin-left: 10px;
+}
+
+.indicator.active {
+  height: 15px;
+  width: 15px;
+  border: 1px solid #E8B86D;
+  background: white;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-underline-animation::after {
+  transform-origin: bottom right;
+}
+
+.hover-underline-animation:hover::after {
+  transform-origin: bottom left;
+}
+
+.hover-underline-animation-black {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation-black::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-black:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-underline-animation-black::after {
+  transform-origin: bottom right;
+}
+
+.hover-underline-animation-black:hover::after {
+  transform-origin: bottom left;
+}
+
+.productImageSwiper2 {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.productImageSwiper2 .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.productImageSwiper2 .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.react-slideshow-container {
+  @apply relative;
+}
+
+.react-slideshow-container .nav {
+  @apply z-10;
+}
+
+.indicators {
+  @apply absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 transform gap-2;
+}
+
+.indicator.active {
+  @apply bg-white;
+}
+
+/* Add smooth transition for images */
+.react-slideshow-fade-wrapper {
+  @apply transition-all duration-500;
+}
+
+/* Optimize image loading */
+img {
+  @apply transition-opacity duration-300;
+}
+
+img[loading="lazy"] {
+  @apply opacity-100;
+}
+
+img[loading="lazy"].loaded {
+  @apply opacity-0;
+}
